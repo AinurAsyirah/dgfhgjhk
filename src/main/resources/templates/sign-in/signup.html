@@ -130,24 +130,101 @@
                   <div class="form-group row">
                     <div class="col-12">
                       <div class="form-material floating">
-                        <input type="text" class="form-control" id="signup-username" name="signup-username">
-                        <label for="signup-username">Username</label>
+                        <input type="text" class="form-control" id="signup-username" name="username">
+                        <label for="signup-username">Nombor Kad Pengenalan</label>
+                        <small style="color:red ">eg:0102030405566(tanpa '-')</small>
                       </div>
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="col-12">
                       <div class="form-material floating">
-                        <input type="email" class="form-control" id="signup-email" name="signup-email">
+                        <input type="text" class="form-control" id="signup-nama" name="nama">
+                        <label for="signup-nama">Nama</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-12">
+                      <div class="form-material floating">
+                        <input type="text" class="form-control" id="signup-notel" name="notel">
+                        <label for="signup-notel">Nombor Telefon</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-12">
+                      <div class="form-material floating">
+                        <input type="email" class="form-control" id="signup-email" name="email">
                         <label for="signup-email">Email</label>
                       </div>
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="col-12">
+                      <label for="profile-settings-email">Tarikh Lahir</label>
+                      <input type="date" class="js-datepicker form-control form-control-lg" id="example-datepicker6" name="dob" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="dd-mm-yyyy" value="24-Jun-1973" >
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-9">
                       <div class="form-material floating">
-                        <input type="password" class="form-control" id="signup-password" name="signup-password">
-                        <label for="signup-password">Password</label>
+                        <select class="form-control" id="material-jantina" name="jantina">
+                          <option></option><!-- Empty value for demostrating material select box -->
+                          <option value="1">Lelaki</option>
+                          <option value="2">Perempuan</option>
+                        </select>
+                        <label for="material-jantina">Jantina</label>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div class="form-group row">
+                    <div class="col-md-9">
+                      <div class="form-material floating">
+                        <select class="form-control" id="material-jantina" name="tingkatan">
+                          <option></option><!-- Empty value for demostrating material select box -->
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                        <label for="material-jantina">Tingkatan</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-9">
+                      <div class="form-material floating">
+                        <select class="form-control" id="material-jantina" name="kelas">
+                          <option></option><!-- Empty value for demostrating material select box -->
+                          <option value="1">Mukhriz</option>
+                          <option value="2">Durah</option>
+                          <option value="3">Melewar</option>
+                          <option value="4">Kurshiah</option>
+                          <option value="5">Antah</option>
+                          <option value="6">Najihah</option>
+                          <option value="7">Munawir</option>
+                          <option value="8">Bahiyah</option>
+                        </select>
+                        <label for="material-jantina">Kelas</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-12">
+                      <div class="form-material floating">
+                        <textarea class="form-control" id="material-textarea-alamat" name="alamat" rows="3"></textarea>
+                        <label for="material-textarea-alamat">Alamat</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-12">
+                      <div class="form-material floating">
+                        <input type="password" class="form-control" id="signup-password" name="password">
+                        <label for="signup-password">Kata Laluan</label>
                       </div>
                     </div>
                   </div>
@@ -155,10 +232,10 @@
                     <div class="col-12">
                       <div class="form-material floating">
                         <input type="password" class="form-control" id="signup-password-confirm" name="signup-password-confirm">
-                        <label for="signup-password-confirm">Password Confirmation</label>
+                        <label for="signup-password-confirm">Sahkan Kata Laluan</label>
                       </div>
                     </div>
-                  </div>
+                  </div>       
                   <div class="form-group row">
                     <div class="col-12">
                       <div class="custom-control custom-checkbox">
