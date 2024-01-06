@@ -2,7 +2,6 @@ package com.heroku.java.CONTROLLER;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import com.heroku.java.REPOSITORY.repository;
 //import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.GetMapping;
 
@@ -30,28 +29,58 @@ import java.sql.SQLException;
 // import javax.measure.unit.SI;
 @RestController
 public class student_register{
-    private final repository repo;
+    private final DataSource dataSource;
 
     @Autowired
-    public student_register(repository repo){
-        this.repo =repo;
+    public student_register(DataSource dataSource){
+        this.dataSource = dataSource;
     }
 
     @PostMapping("/signup")
-    public String addStudent(@RequestBody student_register_model student){
-        repo.addStudent(
-            student.getUsername(),
-            student.getNama(),
-            student.getEmail(),
-            student.getNotel(),
-            student.getDob(),
-            student.getJantina(),
-            student.getTingkatan(),
-            student.getKelas(),
-            student.getAlamat(),
-            student.getPassword()
-        );
-        return "redirect:/signin";
+    public String registerAcc(HttpSession session, @ModelAttribute("signup") student_register_model stud){
+        try{
+            Connection con=dataSource.getConnection();
+            final var s=con.prepareStatement("INSERT INTO student(studentic,studentname,studentemail,studentphone,studentdob,studentgender,studentclass,studentform,studentaddress,studentpassword) VALUES (?,?,?,?,?,?,?,?,?,?)");
+        
+           
+            String studIC= stud.getUsername();
+            String name= stud.getNama();
+            String email=stud.getEmail();
+            String phone=stud.getNotel();
+            String dob=stud.getDob();
+            String gender=stud.getJantina();
+            String form=stud.getTingkatan();
+            String kelas=stud.getKelas();
+            String address=stud.getAlamat();
+            String password =stud.getPassword();
+    
+            s.setString(1,studIC);
+            s.setString(2,name);
+            s.setString(3,email);
+            s.setString(4,phone);
+            s.setString(5,dob);
+            s.setString(6,gender);
+            s.setString(7,form);
+            s.setString(8,kelas);
+            s.setString(9,address);
+            s.setString(10,password);
+            s.executeUpdate();
+    
+            con.close();
+            return "redirect:/signin";
+        }catch (SQLException sqe) {
+            System.out.println("Error Code = " + sqe.getErrorCode());
+            System.out.println("SQL state = " + sqe.getSQLState());
+            System.out.println("Message = " + sqe.getMessage());
+            System.out.println("printTrace /n");
+            sqe.printStackTrace();
+      
+            return "redirect:/signup";
+          } catch (Exception e) {
+            System.out.println("E message : " + e.getMessage());
+            return "redirect:/signup";
+          }
+    
     }
 }
 
