@@ -8,7 +8,6 @@ public class student_register_model {
     private String notel;
     private String dob;
     private String jantina;
-   private String tingkatan;
     private String kelas;
     private String alamat;
     private String password;
@@ -101,20 +100,6 @@ public class student_register_model {
      */
     public void setJantina(String jantina) {
         this.jantina = jantina;
-    }
-
-    /**
-     * @return String return the tingkatan
-     */
-    public String getTingkatan() {
-        return tingkatan;
-    }
-
-    /**
-     * @param tingkatan the tingkatan to set
-     */
-    public void setTingkatan(String tingkatan) {
-        this.tingkatan = tingkatan;
     }
 
     /**
