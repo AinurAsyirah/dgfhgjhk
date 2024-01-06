@@ -70,7 +70,6 @@ public class student_register{
             return "redirect:/signin";
         }catch (SQLException sqe) {
             System.out.println("Error Code = " + sqe.getErrorCode());
-            System.out.println("SQL state = " + sqe.getSQLState());
             System.out.println("Message = " + sqe.getMessage());
             System.out.println("printTrace /n");
             sqe.printStackTrace();
