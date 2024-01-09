@@ -65,19 +65,13 @@ public class student_register{
             s.executeUpdate();
     
             con.close();
-            return "redirect:/signin";
-        }catch (SQLException sqe) {
-            System.out.println("Error Code = " + sqe.getErrorCode());
-            System.out.println("Message = " + sqe.getMessage());
-            System.out.println("printTrace /n");
-            sqe.printStackTrace();
+           
+        }catch (Exception e) {
+            e.printStackTrace();
       
             return "redirect:/signup";
-          } catch (Exception e) {
-            System.out.println("E message : " + e.getMessage());
-            return "redirect:/signup";
-          }
-    
+          } 
+     return "redirect:/signin";
     }
 }
 
