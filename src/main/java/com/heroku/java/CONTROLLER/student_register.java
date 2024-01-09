@@ -2,8 +2,8 @@ package com.heroku.java.CONTROLLER;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
-//import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 //import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-//import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.heroku.java.MODEL.student_register_model;
 
 import jakarta.servlet.http.HttpSession;
 
 import javax.sql.DataSource;
+import java.sql.*;
 import java.sql.Connection;
 //import java.sql.ResultSet;
 // import java.util.ArrayList;
@@ -27,7 +28,7 @@ import java.sql.SQLException;
 // import org.jscience.physics.amount.Amount;
 // import org.jscience.physics.model.RelativisticModel;
 // import javax.measure.unit.SI;
-@RestController
+@Controller
 public class student_register{
     private final DataSource dataSource;
 
@@ -69,7 +70,7 @@ public class student_register{
         }catch (Exception e) {
             e.printStackTrace();
       
-            return "redirect:/signup";
+            return "redirect:sign-in/signup";
           } 
      return "redirect:/signin";
     }
