@@ -1,5 +1,4 @@
 package com.heroku.java.MODEL;
-
 public class student_register_model {
 
     private String username;
