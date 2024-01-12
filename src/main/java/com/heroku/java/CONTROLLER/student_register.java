@@ -38,7 +38,7 @@ public class student_register{
     }
 
     @PostMapping("/signup")
-    public String registerAcc(HttpSession session, @ModelAttribute("signup") student_register_model stud){
+    public String registerAcc(@ModelAttribute("signup") student_register_model stud){
         try{
             Connection con=dataSource.getConnection();
             final var s=con.prepareStatement("INSERT INTO public.student(studentic,studentname,studentemail,studentphone,studentdob,studentgender,studentclass,studentaddress,studentpassword) VALUES (?,?,?,?,?,?,?,?,?)");
@@ -70,7 +70,7 @@ public class student_register{
         }catch (Exception e) {
             e.printStackTrace();
       
-            return "redirect:sign-in/signup";
+            return "redirect:/signup";
           } 
      return "redirect:/signin";
     }
